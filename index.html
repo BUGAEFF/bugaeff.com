@@ -3,44 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sergey Bugaeff — AI & Automation</title>
-<meta name="description" content="AI & Automation consultant based in London. Smart flows. Real profit.">
+<title>Sergey Bugaeff — AI & Automation Consultant</title>
+<meta name="description" content="AI & Automation consultant based in London. Smart Automation. Integrated AI. Works 24/7.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0d1b2e;
-    --navy-mid: #112240;
-    --navy-light: #1a3050;
-    --accent: #7ab3d8;
-    --accent-bright: #4a9eff;
-    --text: #e8f0f8;
-    --text-dim: #8baabb;
-    --cream: #f0ece4;
+    --bg-start: #021128;
+    --bg-end: #0b2545;
+    --card-bg: #0d2540;
+    --card-hover: #123257;
+    --accent: #007bfe;
+    --accent-bright: #00bfff;
+    --text: #ffffff;
+    --text-dim: #8da9c4;
+    --border: rgba(0, 123, 254, 0.15);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--navy);
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
     color: var(--text);
-    font-family: 'Trebuchet MS', Trebuchet, sans-serif;
-    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* NOISE TEXTURE OVERLAY */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: radial-gradient(rgba(0, 123, 254, 0.06) 1px, transparent 0);
+    background-size: 40px 40px;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.4;
   }
 
   /* HERO */
@@ -49,24 +50,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px 40px;
+    padding: 60px 80px;
     position: relative;
-    overflow: hidden;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(74,159,255,0.06) 0%, transparent 70%);
-    pointer-events: none;
   }
 
   .hero-inner {
-    max-width: 900px;
+    max-width: 1050px;
     margin: 0 auto;
     width: 100%;
     position: relative;
@@ -74,168 +63,212 @@
   }
 
   .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.3em;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 32px;
+    color: var(--accent-bright);
+    margin-bottom: 28px;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.2s;
   }
 
-  .hero-name {
-    font-size: clamp(48px, 8vw, 96px);
-    font-weight: 200;
-    letter-spacing: 0.12em;
+  .hero-title {
+    text-align: left; /* Исправлено: теперь выравнивание по левому краю, как на баннере */
     text-transform: uppercase;
-    line-height: 1;
-    color: var(--text);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
-  }
-
-  .hero-name span {
-    color: var(--accent-bright);
-  }
-
-  .hero-tagline {
-    font-size: clamp(13px, 2vw, 16px);
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--text-dim);
     margin-bottom: 48px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.6s;
   }
 
-  .slogan {
-    border-left: 2px solid var(--accent-bright);
-    padding-left: 24px;
-    margin-bottom: 56px;
+  .hero-title .line1 {
+    font-weight: 800;
+    font-size: clamp(36px, 6.5vw, 86px);
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1.15;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.35s;
+  }
+
+  .hero-title .line2 {
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 64px);
+    color: var(--accent);
+    line-height: 1.15;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.5s;
+  }
+
+  .hero-title .line3 {
+    font-weight: 600;
+    font-size: clamp(24px, 4.2vw, 52px);
+    color: var(--text-dim);
+    line-height: 1.15;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.65s;
+  }
+
+  .hero-name {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 8px;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.8s;
   }
 
-  .slogan-line {
-    font-size: clamp(18px, 3vw, 28px);
-    font-weight: 200;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    line-height: 1.6;
-    color: var(--text);
-  }
+  .hero-name span { color: var(--accent-bright); }
 
-  .slogan-line:nth-child(2) { color: var(--accent); }
-  .slogan-line:nth-child(3) { color: var(--text-dim); font-size: clamp(14px, 2vw, 20px); }
+  .hero-tagline {
+    font-size: clamp(13px, 2vw, 16px);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.95s;
+  }
 
   .hero-cta {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 0.8s ease forwards 1s;
+    animation: fadeUp 0.8s ease forwards 1.1s;
   }
 
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    font-family: 'Trebuchet MS', sans-serif;
+    gap: 10px;
+    padding: 16px 36px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     text-decoration: none;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
   }
 
   .btn-primary {
-    background: var(--accent-bright);
-    color: var(--navy);
-    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 123, 254, 0.3);
   }
 
   .btn-primary:hover {
-    background: var(--accent);
+    background: var(--accent-bright);
     transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(0, 191, 255, 0.4);
   }
 
   .btn-ghost {
-    background: transparent;
-    color: var(--text-dim);
-    border: 1px solid rgba(122,179,216,0.3);
+    background: rgba(255,255,255,0.03);
+    color: var(--text);
+    border: 1px solid rgba(0, 123, 254, 0.25);
   }
 
   .btn-ghost:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--accent-bright);
+    color: var(--accent-bright);
     transform: translateY(-2px);
-  }
-
-  /* DIVIDER */
-  .section-divider {
-    width: 60px;
-    height: 1px;
-    background: var(--accent-bright);
-    margin: 0 auto 64px;
-    opacity: 0.4;
   }
 
   /* ABOUT */
   .about {
-    padding: 100px 40px;
+    padding: 60px 80px;
     position: relative;
     z-index: 1;
   }
 
   .about-inner {
-    max-width: 900px;
+    max-width: 1050px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
+    grid-template-columns: auto 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: center;
   }
 
   .section-label {
-    font-size: 10px;
-    letter-spacing: 0.4em;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--accent-bright);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
-  .about-text {
-    font-size: 16px;
+  .about-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 123, 254, 0.25);
+    overflow: hidden;
+    position: relative;
+    background: var(--card-bg);
+    flex-shrink: 0;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: radial-gradient(circle at center, rgba(0,123,254,0.08) 0%, transparent 70%);
+  }
+
+  .photo-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(141,169,196,0.4);
+  }
+
+  .about-text h3 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .about-text p {
+    font-size: 15px;
     color: var(--text-dim);
+    font-weight: 300;
+    margin-bottom: 16px;
     line-height: 1.8;
   }
 
-  .about-text p + p { margin-top: 16px; }
-
   .about-text strong {
     color: var(--text);
-    font-weight: 400;
+    font-weight: 600;
   }
 
   .about-stats {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
   }
 
   .stat {
-    border-bottom: 1px solid rgba(122,179,216,0.15);
-    padding-bottom: 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
   }
 
   .stat-number {
-    font-size: 36px;
-    font-weight: 200;
-    letter-spacing: 0.1em;
+    font-size: 32px;
+    font-weight: 800;
     color: var(--accent-bright);
     line-height: 1;
     margin-bottom: 8px;
@@ -243,21 +276,24 @@
 
   .stat-label {
     font-size: 11px;
-    letter-spacing: 0.25em;
+    font-weight: 600;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
 
-  /* WHAT I DO */
+  /* SERVICES */
   .services {
-    padding: 100px 40px;
-    background: var(--navy-mid);
+    padding: 120px 80px;
+    background: rgba(0,0,0,0.15);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     position: relative;
     z-index: 1;
   }
 
   .services-inner {
-    max-width: 900px;
+    max-width: 1050px;
     margin: 0 auto;
   }
 
@@ -266,9 +302,9 @@
   }
 
   .section-title {
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 200;
-    letter-spacing: 0.1em;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
     color: var(--text);
     line-height: 1.2;
@@ -277,77 +313,81 @@
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 24px;
   }
 
   .service-card {
-    background: var(--navy);
-    padding: 40px 32px;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px 28px;
+    transition: all 0.3s ease;
   }
 
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--accent-bright);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: left;
+  .service-card:hover {
+    background: var(--card-hover);
+    border-color: rgba(0, 123, 254, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 123, 254, 0.12);
   }
 
-  .service-card:hover { background: var(--navy-light); }
-  .service-card:hover::before { transform: scaleX(1); }
-
-  .service-num {
-    font-size: 11px;
-    letter-spacing: 0.3em;
+  .service-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(0, 123, 254, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--accent-bright);
-    opacity: 0.5;
-    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin-bottom: 22px;
   }
 
   .service-title {
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text);
-    margin-bottom: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 12px;
   }
 
   .service-desc {
     font-size: 14px;
+    font-weight: 300;
     color: var(--text-dim);
     line-height: 1.7;
   }
 
   /* CONTACT */
   .contact {
-    padding: 100px 40px;
+    padding: 120px 80px;
     position: relative;
     z-index: 1;
   }
 
   .contact-inner {
-    max-width: 900px;
+    max-width: 1050px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 64px;
     align-items: start;
+  }
+
+  .contact-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    max-width: 460px;
   }
 
   .contact-links {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 14px;
+    margin-top: 32px;
   }
 
   .contact-link {
@@ -357,22 +397,27 @@
     text-decoration: none;
     color: var(--text-dim);
     font-size: 14px;
-    letter-spacing: 0.05em;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(122,179,216,0.1);
-    transition: color 0.2s ease;
+    font-weight: 500;
+    padding: 16px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.2s ease;
   }
 
-  .contact-link:hover { color: var(--accent); }
+  .contact-link:hover {
+    color: #fff;
+    border-color: var(--accent);
+    background: var(--card-hover);
+  }
 
   .contact-link-icon {
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(122,179,216,0.2);
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    color: var(--accent-bright);
     flex-shrink: 0;
   }
 
@@ -383,66 +428,75 @@
   }
 
   .chat-box {
-    background: var(--navy-mid);
-    border: 1px solid rgba(122,179,216,0.15);
-    flex: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
-    min-height: 340px;
+    min-height: 380px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    overflow: hidden;
   }
 
   .chat-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid rgba(122,179,216,0.1);
+    padding: 18px 22px;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 
   .chat-dot {
     width: 8px;
     height: 8px;
-    background: #48bb78;
+    background: #10b981;
     border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
     animation: pulse 2s infinite;
   }
 
   .chat-title {
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
 
   .chat-messages {
     flex: 1;
-    padding: 20px;
+    padding: 22px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-height: 240px;
+    gap: 14px;
+    max-height: 260px;
   }
 
   .msg {
     max-width: 85%;
     padding: 12px 16px;
     font-size: 14px;
+    font-weight: 300;
+    border-radius: 10px;
     line-height: 1.5;
   }
 
   .msg-bot {
-    background: rgba(74,159,255,0.08);
-    border-left: 2px solid var(--accent-bright);
+    background: rgba(0, 123, 254, 0.08);
+    border-left: 2px solid var(--accent);
     color: var(--text-dim);
     align-self: flex-start;
+    border-radius: 4px 10px 10px 10px;
   }
 
   .msg-user {
-    background: rgba(122,179,216,0.1);
-    color: var(--text);
+    background: var(--accent);
+    color: #fff;
     align-self: flex-end;
-    text-align: right;
+    font-weight: 400;
+    border-radius: 10px 4px 10px 10px;
   }
 
   .msg-typing {
@@ -450,9 +504,11 @@
     gap: 4px;
     align-items: center;
     padding: 12px 16px;
-    background: rgba(74,159,255,0.08);
-    border-left: 2px solid var(--accent-bright);
+    background: rgba(0, 123, 254, 0.08);
+    border-left: 2px solid var(--accent);
     align-self: flex-start;
+    border-radius: 4px 10px 10px 10px;
+    width: fit-content;
   }
 
   .typing-dot {
@@ -467,50 +523,66 @@
 
   .chat-input-row {
     display: flex;
-    border-top: 1px solid rgba(122,179,216,0.1);
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,0.15);
   }
 
   .chat-input {
     flex: 1;
     background: transparent;
     border: none;
-    padding: 14px 16px;
+    padding: 16px 20px;
     color: var(--text);
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     font-size: 14px;
     outline: none;
   }
 
-  .chat-input::placeholder { color: rgba(139,170,187,0.4); }
+  .chat-input::placeholder { color: rgba(141,169,196,0.4); }
 
   .chat-send {
-    background: var(--accent-bright);
+    background: transparent;
     border: none;
-    padding: 14px 20px;
-    color: var(--navy);
+    padding: 0 22px;
+    color: var(--accent-bright);
+    font-size: 18px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s;
+    transition: color 0.2s;
   }
 
-  .chat-send:hover { background: var(--accent); }
+  .chat-send:hover { color: #fff; }
 
   /* FOOTER */
   footer {
-    padding: 40px;
-    border-top: 1px solid rgba(122,179,216,0.1);
-    text-align: center;
+    padding: 40px 80px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
     position: relative;
     z-index: 1;
   }
 
   .footer-text {
     font-size: 11px;
-    letter-spacing: 0.2em;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-dim);
-    opacity: 0.4;
+    opacity: 0.6;
   }
+
+  .footer-text a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s;
+  }
+
+  .footer-text a:hover { color: var(--accent-bright); }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
@@ -528,50 +600,42 @@
     30% { transform: translateY(-6px); }
   }
 
-  .about-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 1px solid rgba(122,179,216,0.2);
-    overflow: hidden;
-    margin-bottom: 32px;
-    position: relative;
-    background: var(--navy-mid);
+  /* TABLET */
+  @media (max-width: 900px) {
+    .about-inner { grid-template-columns: 1fr; gap: 36px; text-align: left; }
+    .about-photo { margin: 0 auto; }
   }
-
-  .photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: radial-gradient(circle at center, rgba(74,159,255,0.05) 0%, transparent 70%);
-  }
-
-  .photo-label {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(122,179,216,0.3);
-  }
-
-  /* Replace placeholder with real photo:
-     .about-photo { background: url('photo.jpg') center/cover; }
-     .photo-placeholder { display: none; }
-  */
 
   /* MOBILE */
   @media (max-width: 768px) {
-    .hero { padding: 80px 24px 60px; }
-    .about { padding: 60px 24px; }
-    .about-inner { grid-template-columns: 1fr; gap: 48px; }
-    .services { padding: 60px 24px; }
-    .services-grid { grid-template-columns: 1fr; gap: 2px; }
-    .contact { padding: 60px 24px; }
-    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-    footer { padding: 32px 24px; }
+    .hero { min-height: auto; padding: 56px 24px 48px; }
+    .eyebrow { margin-bottom: 20px; }
+    .hero-title { margin-bottom: 28px; }
+    .hero-title .line1 { font-size: 44px; white-space: normal; }
+    .hero-title .line2 { font-size: 34px; }
+    .hero-title .line3 { font-size: 30px; }
+    .hero-name { font-size: 30px; margin-top: 8px; }
+    .hero-tagline { margin-bottom: 28px; }
+
+    .about { padding: 56px 24px; }
+    .about-photo {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 8px;
+    }
+    .photo-placeholder svg { width: 60px; height: 60px; }
+    .photo-label { font-size: 12px; }
+    .about-text h3 { font-size: 24px; }
+    .about-text p { font-size: 15px; }
+
+    .services { padding: 56px 24px; }
+    .services-header { margin-bottom: 32px; }
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    .contact { padding: 56px 24px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+
+    footer { padding: 32px 24px; flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -581,13 +645,13 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">London · AI & Automation Consultant</div>
-    <h1 class="hero-name">Sergey<br><span>Bugaeff</span></h1>
-    <div class="hero-tagline">AI & Automation · Smart Flows · Real Profit</div>
-    <div class="slogan">
-      <div class="slogan-line">Full Automation.</div>
-      <div class="slogan-line">Works 24/7.</div>
-      <div class="slogan-line">Set once. Forget it.</div>
+    <div class="hero-title">
+      <div class="line1">Smart Automation.</div>
+      <div class="line2">Integrated AI.</div>
+      <div class="line3">Works <span style="color:#007bfe;">24/7.</span></div>
     </div>
+    <div class="hero-name">Sergey <span>Bugaeff</span></div>
+    <div class="hero-tagline">n8n · AI Agents · Production Backends</div>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Get in touch</a>
       <a href="https://linkedin.com/in/bugaeff" target="_blank" class="btn btn-ghost">LinkedIn →</a>
@@ -598,38 +662,35 @@
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-inner">
-    <div>
-      <div class="section-label">About</div>
-      <div class="about-text">
-        <p>I build <strong>AI-powered automation systems</strong> that replace repetitive manual work — permanently.</p>
-        <p>No 6-month IT projects. No staff drama. Just clean, reliable workflows that run while you sleep.</p>
-        <p>Based in London. Working with businesses across industries who are ready to stop paying people to copy-paste data.</p>
+    <div class="about-photo">
+      <div class="photo-placeholder">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(141,169,196,0.3)" stroke-width="1">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+        <div class="photo-label">Sergey Bugaeff</div>
       </div>
     </div>
-    <div>
-      <div class="about-photo">
-        <div class="photo-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(122,179,216,0.3)" stroke-width="1">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-          <div class="photo-label">Sergey Bugaeff</div>
-        </div>
-      </div>
-      <div class="about-stats">
+    <div class="about-text">
+      <div class="section-label">About</div>
+      <h3>Architecting systems that think, connect, and scale.</h3>
+      <p>I build <strong>production-grade automation systems</strong> that eliminate repetitive manual work — permanently.</p>
+      <p>No 6-month IT corporate projects. Just clean, containerized workflows and data pipelines that run while you sleep.</p>
+      <p>Based in London. Working with businesses ready to bridge advanced AI models with solid backend infrastructure.</p>
+    </div>
+    <div class="about-stats">
       <div class="stat">
         <div class="stat-number">24/7</div>
         <div class="stat-label">Systems that never stop</div>
       </div>
       <div class="stat">
         <div class="stat-number">Set once</div>
-        <div class="stat-label">No ongoing management needed</div>
+        <div class="stat-label">No ongoing human management</div>
       </div>
       <div class="stat">
         <div class="stat-number">Real ROI</div>
-        <div class="stat-label">Measurable hours saved weekly</div>
+        <div class="stat-label">Measurable overhead eliminated</div>
       </div>
-    </div>
     </div>
   </div>
 </section>
@@ -643,19 +704,19 @@
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-num">01</div>
-        <div class="service-title">AI Agents</div>
-        <div class="service-desc">Intelligent systems that think, decide, and act — without a human in the loop.</div>
-      </div>
-      <div class="service-card">
-        <div class="service-num">02</div>
+        <div class="service-icon">n8n</div>
         <div class="service-title">Workflow Automation</div>
-        <div class="service-desc">End-to-end process automation using n8n, APIs, and custom integrations.</div>
+        <div class="service-desc">End-to-end autonomous workflows, custom data routing, and advanced multi-service pipelines built on n8n.</div>
       </div>
       <div class="service-card">
-        <div class="service-num">03</div>
-        <div class="service-title">Business Systems</div>
-        <div class="service-desc">CRM, email, reporting, data pipelines — all connected and running automatically.</div>
+        <div class="service-icon">AI</div>
+        <div class="service-title">Autonomous AI Agents</div>
+        <div class="service-desc">Context-aware systems and custom AI chatbots that think, decide, and act inside your business logic.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">DEV</div>
+        <div class="service-title">Resilient Infrastructure</div>
+        <div class="service-desc">Production-grade infrastructure containerized with Docker, with clean persistence layers running on PostgreSQL.</div>
       </div>
     </div>
   </div>
@@ -667,18 +728,23 @@
     <div>
       <div class="section-label">Contact</div>
       <h2 class="section-title">Let's talk<br>automation</h2>
+      <p class="contact-desc" style="margin-top:20px;">Have a workflow problem or an AI integration project in mind? Reach out directly or drop a line to my AI assistant.</p>
       <div class="contact-links">
         <a href="mailto:sergey@bugaeff.com" class="contact-link">
-          <div class="contact-link-icon">@</div>
+          <div class="contact-link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          </div>
           sergey@bugaeff.com
         </a>
         <a href="https://linkedin.com/in/bugaeff" target="_blank" class="contact-link">
-          <div class="contact-link-icon">in</div>
+          <div class="contact-link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zM8 19h-3v-9h3v9zM6.5 8.25c-0.97 0-1.75-0.79-1.75-1.75s0.78-1.75 1.75-1.75 1.75 0.79 1.75 1.75-0.78 1.75-1.75 1.75zM20 19h-3v-4.5c0-1.07-0.93-2-2-2s-2 0.93-2 2v4.5h-3v-9h3v1.31c0.7-0.84 1.85-1.31 3-1.31 2.21 0 4 1.79 4 4v5z"/></svg>
+          </div>
           linkedin.com/in/bugaeff
         </a>
         <a href="https://t.me/Sergey_Bugaeff" target="_blank" class="contact-link">
           <div class="contact-link-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.19 13.668l-2.965-.924c-.644-.203-.658-.644.136-.953l11.57-4.461c.537-.194 1.006.131.963.891z"/>
             </svg>
           </div>
@@ -689,14 +755,14 @@
 
     <!-- CHAT -->
     <div class="chat-section">
-      <div class="section-label" style="margin-bottom:16px;">Ask me anything</div>
+      <div class="section-label" style="margin-bottom:16px;">Ask my AI Assistant</div>
       <div class="chat-box">
         <div class="chat-header">
           <div class="chat-dot"></div>
           <div class="chat-title">AI Assistant · Sergey Bugaeff</div>
         </div>
         <div class="chat-messages" id="chatMessages">
-          <div class="msg msg-bot">Hi! I'm Sergey's AI assistant. Ask me anything about automation, AI agents, or how we can help your business.</div>
+          <div class="msg msg-bot">Hi! I'm Sergey's AI assistant. Ask me anything about automation, n8n workflows, or how we can help your business.</div>
         </div>
         <div class="chat-input-row">
           <input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." />
@@ -708,16 +774,12 @@
 </section>
 
 <footer>
-  <div class="footer-text">© 2026 Sergey Bugaeff · bugaeff.com · London</div>
+  <div class="footer-text">© 2026 Sergey Bugaeff · bugaeff.com</div>
+  <div class="footer-text">Managed by <a href="https://linkedin.com/in/bugaeff" target="_blank">Crowd Invest Ltd</a></div>
 </footer>
 
 <script>
-// ============================================================
-// CHAT CONFIG — connect to n8n when ready
-// Replace N8N_WEBHOOK_URL with your actual webhook URL
-// n8n flow: Webhook → Gemini Node → Webhook Response
-// ============================================================
-const N8N_WEBHOOK_URL = ''; // e.g. 'https://your-n8n.com/webhook/chat'
+const N8N_WEBHOOK_URL = ''; 
 
 const messages = [];
 const chatMessages = document.getElementById('chatMessages');
